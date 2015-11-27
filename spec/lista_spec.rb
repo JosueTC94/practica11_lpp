@@ -207,4 +207,17 @@ describe Lista do
             expect(@documento_electronico1.url <=> @documento_electronico2.url).to eq(0)
         end
     end
+    describe "Modulo enumerable->usando referencias" do
+        before :each do
+           @lista1.insertar_nodo(@libro1)
+           @lista1.insertar_nodo(@libro2)
+           @lista1.insertar_nodo(@libro3)
+           @lista1.insertar_nodo(@revista1)
+           @lista1.insertar_nodo(@revista2)
+           @lista1.insertar_nodo(@revista3)
+           @lista1.insertar_nodo(@documento_electronico1)
+           @lista1.insertar_nodo(@documento_electronico2)
+           @lista1.insertar_nodo(@documento_electronico3)
+        end
+    end
 end
