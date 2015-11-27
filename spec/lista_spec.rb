@@ -12,12 +12,12 @@ describe Lista do
         
         #Objeto de clase Revista
         @revista1 = Revista.new(["Juan Jimenez","Alvaro Font","Almudena Fernandez"],"National Geography", "14 de Diciembre", ["ISSN:JDCYCFHNF75","ISSN:KKSDKDKK"])
-        @revista2 = Revista.new(["Juan","Alvaro Font","Almudena Fernandez"],"National Geography 1.0", "13", ["ISSN:JDCYCFHNF75","ISSN:KKSDKDKK"])
+        @revista2 = Revista.new(["Juan Jimenez","Alvaro Font","Almudena Fernandez"],"National Geography 1.0", "14 de Diciembre", ["ISSN:JDCYCFHNF76","ISSN:KKSDKDKK"])
         @revista3 = Revista.new(["Pepe","Alvaro Font","Almudena Fernandez"],"National Geography 1.0", "13", ["ISSN:JDCYCFHNF77","ISSN:KKSDKDKK"])
         
         #Objeto de clase Documento_electronico
         @documento_electronico1 = Documento_electronico.new(["Magdalena,Susana,Florentina"], "Aprende a programar Ruby","18 de julio", "https://magdalenatj.github.io/tutorial_ruby")
-        @documento_electronico2 = Documento_electronico.new(["Sofia,Fernanda,Maria"], "Aprende a programar Ruby","18 de julio", "https://magdalenatj.github.io/tutorial_ruby")     
+        @documento_electronico2 = Documento_electronico.new(["Sofia,Fernanda,Maria"], "Aprende a programar Python","18 de julio", "https://magdalenatj.github.io/tutorial_ruby")     
         @documento_electronico3 = Documento_electronico.new(["Barbara,Antonia,Marta"], "Aprende a programar Ruby","18 de julio", "https://magdalenatj.github.io/tutorial_ruby")
         
         #Objeto de clase Lista
@@ -164,23 +164,41 @@ describe Lista do
     end
     
     describe "Comparando referencias bibliográficas" do
-        it "Comparando autores de dos libros diferentes" do
+        it "Los autores de dos libros son diferentes" do
             expect(@libro3.autor <=> @libro1.autor).to eq(1)
         end
-        it "Comparando titulos de dos libros diferentes" do
+        it "El título del libro1 no es menor que el título del libro 2" do
             expect(@libro1.titulo <= @libro2.titulo).to eq(false)
         end
-        it "Comparando fecha de publicacion de dos libros diferentes" do
+        it "Las fechas de publicacion de dos libros diferentes" do
             expect(@libro1.fecha_publicacion == @libro2.fecha_publicacion).to eq(false)
         end
-        it "Comparando el isbn de dos libros diferentes" do
+        it "Los números isbn de dos libros son diferentes" do
            expect(@libro1.numero_ISBN <=> @libro2.numero_ISBN).to eq(-1) 
         end
-        it "Comparo números de edición de 2 libros diferentes" do
+        it "Los números de edición de 2 libros son diferentes" do
             expect(@libro1.numero_edicion < @libro2.numero_edicion).to eq(true)
         end
-        it "Comparando que los números de edición de 2 libros son distintos" do
+        it "Los números de edición de 2 libros son distintos" do
             expect(@libro1.numero_edicion <=> @libro2.numero_edicion).to eq(-1) 
+        end
+        it "Los titulos de 2 revistas son diferentes" do
+            expect(@revista1.titulo <=> @revista2.titulo).to eq(-1)
+        end
+        it "La fecha de publicacion de 2 revistas son iguales" do
+            expect(@revista1.fecha_publicacion <=> @revista2.fecha_publicacion).to eq(0)
+        end
+        it "Los titulos de 2 revistas son iguales" do
+            expect(@revista1.autor <=> @revista2.autor).to eq(0)
+        end
+        it "Los números ISSN de dos revistas son diferentes" do
+            expect(@revista1.numero_ISSN <=> @revista2.numero_ISSN).to eq(-1) 
+        end
+        it "Los números ISSN de dos revistas son diferentes" do
+            expect(@revista1.numero_ISSN <=> @revista3.numero_ISSN).to eq(-1) 
+        end
+        it "Fecha de publicación de la revista1 es menor o igual que la fecha de publicación de la revista 2" do
+            expect(@revista1.fecha_publicacion >= @revista2.fecha_publicacion).to eq(true)
         end
     end
 end
