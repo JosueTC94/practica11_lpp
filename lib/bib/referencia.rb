@@ -8,6 +8,17 @@ class Referencia
     @titulo =  titulo
     @fecha_publicacion = publicacion
   end
+  def <=>(other)
+    if((@autor <=> other.autor)==0) 
+        if ((@fecha_publicacion <=> other.fecha_publicacion)==0)
+          @titulo <=> other.titulo
+        else
+          @fecha_publicacion <=> other.fecha_publicacion
+        end
+    else
+        @autor <=> other.autor
+    end
+  end
 end
 class Libro < Referencia
   attr_accessor :editorial, :serie, :numero_edicion, :numero_ISBN
