@@ -222,11 +222,5 @@ describe Lista do
         it "Prueba con count con referencias" do
             expect(@lista1.count).to eq(9)
         end
-        it "Prueba con max con referencias" do
-            expect(@lista1.max).to eq(@libro3) 
-        end
-        it "Prueba con min con referencias" do
-            expect(@lista1.min).to eq(@documento_electronico3)
-        end
     end
 end
