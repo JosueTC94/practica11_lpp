@@ -176,5 +176,11 @@ describe Lista do
         it "Comparando el isbn de dos libros diferentes" do
            expect(@libro1.numero_ISBN <=> @libro2.numero_ISBN).to eq(-1) 
         end
+        it "Comparo números de edición de 2 libros diferentes" do
+            expect(@libro1.numero_edicion < @libro2.numero_edicion).to eq(true)
+        end
+        it "Comparando que los números de edición de 2 libros son distintos" do
+            expect(@libro1.numero_edicion <=> @libro2.numero_edicion).to eq(-1) 
+        end
     end
 end
