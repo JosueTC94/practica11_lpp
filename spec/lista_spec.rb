@@ -285,5 +285,8 @@ describe Lista do
         it "Prueba con collec" do
             expect(@lista1.flat_map { |i| [i,-i]}).to eq([1,-1,2,-2,3,-3,4,-4,5,-5,6,-6,7,-7])
         end
+        it "Cuento los elementos de la lista que son divisibles por 2" do
+            expect(@lista1.count {|x| x%2==0}).to eq(3)
+        end
     end
 end

@@ -1,3 +1,11 @@
+#PRACTICA 9 LENGUAJES Y PARADIGMAS DE PROGRAMACIÓN
+
+##Titulo: Programación Orientada a Objetos. Módulos 
+
+##Autor: Josué Toledo Castro alu0100763492
+
+##Fecha: 27/11/15
+
 # Bib
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bib`. To experiment with that code, run `bin/console` for an interactive prompt.
