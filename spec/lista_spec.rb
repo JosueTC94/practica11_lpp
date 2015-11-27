@@ -7,13 +7,13 @@ describe Lista do
         
         #Objeto de clase Libro
         @libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 4, "(July 7, 2013)", ["ISBN-13: 968-1937785499", "ISBN-10: 1937785491"])
-        @libro2 = Libro.new(["Dav Thomas", "Andy Hunt", "Chad Fowler"], "Programm Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 4, "(July 7, 2015)", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
-        @libro3 = Libro.new(["Thomas", "Hunt", "Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 4, "(July 7, 2013)", ["ISBN-13: 968-1937785499", "ISBN-10: 1937785491"])
+        @libro2 = Libro.new(["Dav Thomas", "Andy Hunt", "Chad Fowler"], "Programm Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 5, "(July 7, 2015)", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
+        @libro3 = Libro.new(["Thomas", "Hunt", "Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 3, "(July 7, 2013)", ["ISBN-13: 968-1937785499", "ISBN-10: 1937785491"])
         
         #Objeto de clase Revista
         @revista1 = Revista.new(["Juan Jimenez","Alvaro Font","Almudena Fernandez"],"National Geography", "14 de Diciembre", ["ISSN:JDCYCFHNF75","ISSN:KKSDKDKK"])
         @revista2 = Revista.new(["Juan","Alvaro Font","Almudena Fernandez"],"National Geography 1.0", "13", ["ISSN:JDCYCFHNF75","ISSN:KKSDKDKK"])
-        @revista3 = Revista.new(["Pepe","Alvaro Font","Almudena Fernandez"],"National Geography 1.0", "13", ["ISSN:JDCYCFHNF75","ISSN:KKSDKDKK"])
+        @revista3 = Revista.new(["Pepe","Alvaro Font","Almudena Fernandez"],"National Geography 1.0", "13", ["ISSN:JDCYCFHNF77","ISSN:KKSDKDKK"])
         
         #Objeto de clase Documento_electronico
         @documento_electronico1 = Documento_electronico.new(["Magdalena,Susana,Florentina"], "Aprende a programar Ruby","18 de julio", "https://magdalenatj.github.io/tutorial_ruby")
@@ -165,7 +165,16 @@ describe Lista do
     
     describe "Comparando referencias bibliográficas" do
         it "Comparando autores de dos libros diferentes" do
-            expect(@libro1.autor <=> @libro2.autor).to eq(1)
+            expect(@libro3.autor <=> @libro1.autor).to eq(1)
+        end
+        it "Comparando titulos de dos libros diferentes" do
+            expect(@libro1.titulo <= @libro2.titulo).to eq(false)
+        end
+        it "Comparando fecha de publicacion de dos libros diferentes" do
+            expect(@libro1.fecha_publicacion == @libro2.fecha_publicacion).to eq(false)
+        end
+        it "Comparando el isbn de dos libros diferentes" do
+           expect(@libro1.numero_ISBN <=> @libro2.numero_ISBN).to eq(-1) 
         end
     end
 end
