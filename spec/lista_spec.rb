@@ -244,7 +244,7 @@ describe Lista do
             expect(@lista1.reject {|nodo| nodo.is_a? Documento_electronico or nodo.is_a? Revista}).to eq([@libro1,@libro2,@libro3])
         end
     end
-    describe "Modulo enumerable->usando enteros" do
+    describe "Modulo enumerable->usando enteros y caracteres" do
         before :each do
             @lista1.insertar_nodo(1)
             @lista1.insertar_nodo(2)
@@ -257,6 +257,15 @@ describe Lista do
             @lista2.insertar_nodo("a")
             @lista2.insertar_nodo("bbb")
             @lista2.insertar_nodo("cccccc")
+        end
+        it "Prueba con count con enteros" do
+            expect(@lista1.count).to eq(7)
+        end
+        it "Prueba con max con enteros" do
+            expect(@lista1.max).to eq(7) 
+        end
+        it "Prueba con min con enteros" do
+            expect(@lista1.min).to eq(1)
         end
     end
 end
