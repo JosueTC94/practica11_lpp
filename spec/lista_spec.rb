@@ -244,4 +244,19 @@ describe Lista do
             expect(@lista1.reject {|nodo| nodo.is_a? Documento_electronico or nodo.is_a? Revista}).to eq([@libro1,@libro2,@libro3])
         end
     end
+    describe "Modulo enumerable->usando enteros" do
+        before :each do
+            @lista1.insertar_nodo(1)
+            @lista1.insertar_nodo(2)
+            @lista1.insertar_nodo(3)
+            @lista1.insertar_nodo(4)
+            @lista1.insertar_nodo(5)
+            @lista1.insertar_nodo(6)
+            @lista1.insertar_nodo(7)
+            
+            @lista2.insertar_nodo("a")
+            @lista2.insertar_nodo("bbb")
+            @lista2.insertar_nodo("cccccc")
+        end
+    end
 end
