@@ -219,14 +219,20 @@ describe Lista do
            @lista1.insertar_nodo(@documento_electronico2)
            @lista1.insertar_nodo(@documento_electronico3)
         end
-        it "Prueba con count con referencias" do
+        it "Contamos los nodos de la lista" do
             expect(@lista1.count).to eq(9)
         end
-        it "Prueba con max con referencias" do
+        it "Buscamos el máximo de la lista" do
             expect(@lista1.max).to eq(@libro3) 
         end
-        it "Prueba con min con referencias" do
+        it "Buscamos el mínimo de la lista" do
             expect(@lista1.min).to eq(@documento_electronico3)
+        end
+        it "Todos los nodos son Referencias" do
+            expect(@lista1.all? {|nodo| nodo.is_a? Referencia}).to be true 
+        end
+        it "Al menos uno de los elementos es un Libro" do
+             expect(@lista1.any? {|nodo| nodo.is_a? Libro }).to be true
         end
     end
 end
