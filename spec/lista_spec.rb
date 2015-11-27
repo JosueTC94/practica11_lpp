@@ -288,5 +288,8 @@ describe Lista do
         it "Cuento los elementos de la lista que son divisibles por 2" do
             expect(@lista1.count {|x| x%2==0}).to eq(3)
         end
+        it "Muestro los elementos de la lista desde la posicion 5" do
+            expect(@lista1.drop(5)).to eq([6,7])
+        end
     end
 end
