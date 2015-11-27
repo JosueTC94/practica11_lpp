@@ -267,5 +267,11 @@ describe Lista do
         it "Prueba con min con enteros" do
             expect(@lista1.min).to eq(1)
         end
+        it "Todos los elementos son mayores que 0" do
+            expect(@lista1.all? { |numero| numero >=1}).to be true 
+        end
+        it "Al menos uno de los elementos de la lista es mayor que 6" do
+            expect(@lista1.any? {|numero| numero > 6 }).not_to be false
+        end
     end
 end
