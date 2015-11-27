@@ -200,5 +200,11 @@ describe Lista do
         it "Fecha de publicación de la revista1 es menor o igual que la fecha de publicación de la revista 2" do
             expect(@revista1.fecha_publicacion >= @revista2.fecha_publicacion).to eq(true)
         end
+        it "Los titulos de dos documentos electrónicos son diferentes" do
+            expect(@documento_electronico1.titulo <=> @documento_electronico2.titulo).to eq(1)
+        end
+        it "Las url de dos documentos electrónicos son iguales" do
+            expect(@documento_electronico1.url <=> @documento_electronico2.url).to eq(0)
+        end
     end
 end
