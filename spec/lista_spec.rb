@@ -273,5 +273,11 @@ describe Lista do
         it "Al menos uno de los elementos de la lista es mayor que 6" do
             expect(@lista1.any? {|numero| numero > 6 }).not_to be false
         end
+        it "Prueba con any?" do
+            expect(@lista2.any? {|word| word.length >= 3}).to be true
+        end
+        it "Prueba con all?" do
+            expect(@lista2.all? {|word| word.length >= 1}).to be true
+        end
     end
 end
