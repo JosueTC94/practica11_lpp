@@ -291,5 +291,25 @@ describe Lista do
         it "Muestro los elementos de la lista desde la posicion 5" do
             expect(@lista1.drop(5)).to eq([6,7])
         end
+        it "Encuentro elemento que sea divisible por 7" do
+            @lista1.insertar_nodo(8)
+            @lista1.insertar_nodo(9)
+            @lista1.insertar_nodo(10)
+            @lista1.insertar_nodo(11)
+            @lista1.insertar_nodo(12)
+            @lista1.insertar_nodo(13)
+            @lista1.insertar_nodo(14)
+            
+            expect(@lista1.find {|x| x%7==0}).not_to be nil
+            expect(@lista1.find {|x| x%7==0}).to eq(7)
+            
+            #Extraigo nodos de la lista hasta que nodo.value != 8
+            aux = @lista1.inicio
+            while(aux.value!=8) do
+                @lista1.extraer_inicio()
+                aux = aux.next
+            end
+            expect(@lista1.find {|x| x%7==0}).to eq(14)            
+        end
     end
 end
