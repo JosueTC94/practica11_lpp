@@ -237,5 +237,11 @@ describe Lista do
         it "Lista1 tiene un libro como miembro" do
             expect(@lista1.member? (@libro3)).to be true
         end
+        it "Utilizando Drop" do
+           expect(@lista1.drop(3)).to eq([@revista1,@revista2,@revista3,@documento_electronico1,@documento_electronico2,@documento_electronico3]) 
+        end
+        it "Utilizando Reject" do
+            expect(@lista1.reject {|nodo| nodo.is_a? Documento_electronico or nodo.is_a? Revista}).to eq([@libro1,@libro2,@libro3])
+        end
     end
 end
