@@ -279,5 +279,11 @@ describe Lista do
         it "Prueba con all?" do
             expect(@lista2.all? {|word| word.length >= 1}).to be true
         end
+        it "Prueba con collec" do
+            expect(@lista1.map { |i| i*2 }).to eq([2,4,6,8,10,12,14])
+        end
+        it "Prueba con collec" do
+            expect(@lista1.flat_map { |i| [i,-i]}).to eq([1,-1,2,-2,3,-3,4,-4,5,-5,6,-6,7,-7])
+        end
     end
 end
