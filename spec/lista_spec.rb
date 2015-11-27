@@ -85,7 +85,7 @@ describe Lista do
             #Compruebo que la lista no esté vacía
             expect(@lista1.lista_vacia()).not_to be true
             #Compruebo que los elementos insertados se corresponden con el valor correcto
-            expect(@lista1.extraer_final().value.to_s) == ("[Dave Thomas, Andy Hunt, Chad Fowler], Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby), Pragmatic Bookshelf, , 4, (July 7, 2013), [ISBN-13: 978-1937785499, ISBN-10: 1937785491]")
+            expect(@lista1.extraer_final().value.to_s) == ("[Dave Thomas, Andy Hunt, Chad Fowler], Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide. (The Facets of Ruby), Pragmatic Bookshelf, , 4, (July 7, 2013), [ISBN-13: 978-1937785499, ISBN-10: 1937785491]")
             expect(@lista1.extraer_final().value.to_s) ==("[Magdalena], Aprende a programar Ruby, 27 de Septiembre de 2003, https://magdalenatj.github.io/tutorial_ruby")
             expect(@lista1.extraer_final().value.to_s) == ("[Juan Jimenez,Alvaro Font,Almudena Fernandez],National Geography, 14 de Enero de 2000, [ISSN:JDCYCFHNF75,ISSN:KKSDKDKK]")
         end
