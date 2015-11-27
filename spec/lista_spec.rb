@@ -234,5 +234,8 @@ describe Lista do
         it "Al menos uno de los elementos es un Libro" do
              expect(@lista1.any? {|nodo| nodo.is_a? Libro }).to be true
         end
+        it "Lista1 tiene un libro como miembro" do
+            expect(@lista1.member? (@libro3)).to be true
+        end
     end
 end
