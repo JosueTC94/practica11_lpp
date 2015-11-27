@@ -6,10 +6,11 @@ describe Lista do
     before :each do
         
         #Objeto de clase Libro
-        @libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 4, "(July 7, 2013)", ["ISBN-13: 968-1937785499", "ISBN-10: 1937785491"])
+        @libro1 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 4, "(July 7, 2013)", ["ISBN-13: 968-1937785499", "ISBN-10: 1937785491"])
         @libro2 = Libro.new(["Dav Thomas", "Andy Hunt", "Chad Fowler"], "Programm Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 5, "(July 7, 2015)", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
         @libro3 = Libro.new(["Thomas", "Hunt", "Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers’ Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 3, "(July 7, 2013)", ["ISBN-13: 968-1937785499", "ISBN-10: 1937785491"])
-        
+        @libro4 = Libro.new(["Dave Thomas", "Andy Hunt", "Chad Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers' Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 4, "(July 7, 2013)", ["ISBN-13: 968-1937785499", "ISBN-10: 1937785491"])
+
         #Objeto de clase Revista
         @revista1 = Revista.new(["Juan Jimenez","Alvaro Font","Almudena Fernandez"],"National Geography", "14 de Diciembre", ["ISSN:JDCYCFHNF75","ISSN:KKSDKDKK"])
         @revista2 = Revista.new(["Juan Jimenez","Alvaro Font","Almudena Fernandez"],"National Geography 1.0", "14 de Diciembre", ["ISSN:JDCYCFHNF76","ISSN:KKSDKDKK"])
@@ -164,8 +165,11 @@ describe Lista do
     end
     
     describe "Comparando referencias bibliográficas" do
+        it "Comparo dos libros directamente" do
+            expect(@libro1 <=> @libro4).to eq(0)
+        end
         it "Los autores de dos libros son diferentes" do
-            expect(@libro3.autor <=> @libro1.autor).to eq(1)
+            expect(@libro3.autor != @libro1.autor).to eq(true)
         end
         it "El título del libro1 no es menor que el título del libro 2" do
             expect(@libro1.titulo <= @libro2.titulo).to eq(false)
@@ -174,13 +178,13 @@ describe Lista do
             expect(@libro1.fecha_publicacion == @libro2.fecha_publicacion).to eq(false)
         end
         it "Los números isbn de dos libros son diferentes" do
-           expect(@libro1.numero_ISBN <=> @libro2.numero_ISBN).to eq(-1) 
+           expect(@libro1.numero_ISBN != @libro2.numero_ISBN).to eq(true) 
         end
         it "Los números de edición de 2 libros son diferentes" do
             expect(@libro1.numero_edicion < @libro2.numero_edicion).to eq(true)
         end
         it "Los números de edición de 2 libros son distintos" do
-            expect(@libro1.numero_edicion <=> @libro2.numero_edicion).to eq(-1) 
+            expect(@libro1.numero_edicion != @libro2.numero_edicion).to eq(true) 
         end
         it "Los titulos de 2 revistas son diferentes" do
             expect(@revista1.titulo <=> @revista2.titulo).to eq(-1)
@@ -192,16 +196,16 @@ describe Lista do
             expect(@revista1.autor <=> @revista2.autor).to eq(0)
         end
         it "Los números ISSN de dos revistas son diferentes" do
-            expect(@revista1.numero_ISSN <=> @revista2.numero_ISSN).to eq(-1) 
+            expect(@revista1.numero_ISSN != @revista2.numero_ISSN).to eq(true) 
         end
         it "Los números ISSN de dos revistas son diferentes" do
-            expect(@revista1.numero_ISSN <=> @revista3.numero_ISSN).to eq(-1) 
+            expect(@revista1.numero_ISSN != @revista3.numero_ISSN).to eq(true) 
         end
         it "Fecha de publicación de la revista1 es menor o igual que la fecha de publicación de la revista 2" do
             expect(@revista1.fecha_publicacion >= @revista2.fecha_publicacion).to eq(true)
         end
         it "Los titulos de dos documentos electrónicos son diferentes" do
-            expect(@documento_electronico1.titulo <=> @documento_electronico2.titulo).to eq(1)
+            expect(@documento_electronico1.titulo != @documento_electronico2.titulo).to eq(true)
         end
         it "Las url de dos documentos electrónicos son iguales" do
             expect(@documento_electronico1.url <=> @documento_electronico2.url).to eq(0)
