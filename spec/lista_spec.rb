@@ -162,4 +162,10 @@ describe Lista do
 
         end 
     end
+    
+    describe "Comparando referencias bibliográficas" do
+        it "Comparando autores de dos libros diferentes" do
+            expect(@libro1.autor <=> @libro2.autor).to eq(1)
+        end
+    end
 end
