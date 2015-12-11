@@ -6,6 +6,8 @@
 
 ##Fecha: 27/11/15
 
+[![Coverage Status](https://coveralls.io/repos/JosueTC94/LPP_prct10/badge.svg?branch=master&service=github)](https://coveralls.io/github/JosueTC94/LPP_prct10?branch=master)
+
 # Bib
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/bib`. To experiment with that code, run `bin/console` for an interactive prompt.
