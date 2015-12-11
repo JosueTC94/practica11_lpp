@@ -1,7 +1,8 @@
 # encoding UTF-8
 require 'spec_helper'
 require 'bib'
-
+require 'coveralls'
+Coveralls.wear!
 
 describe Lista do
     before :each do
