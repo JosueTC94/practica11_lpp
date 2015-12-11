@@ -317,4 +317,17 @@ describe Lista do
             expect(@lista1.find {|x| x%7==0}).to eq(14)            
         end
     end
+    
+    describe "Practica 10 Citas" do
+        before :each do
+            @apa1 = Apa.new()
+            @apa1.lista1.insertar_nodo(@libro1)
+        end 
+        it "Se crea un objeto apa" do
+            expect(@apa1.is_a? Apa).not_to be nil
+        end
+        it "Se crea un objeto apa que contiene 3 libros" do
+            expect(@apa1.imprimir) == ("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide. (the Facets Of Ruby)")
+        end
+    end
 end

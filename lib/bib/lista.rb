@@ -36,7 +36,7 @@ class Lista
     def to_s()
         aux = @inicio
         while(lista_vacia() != true) do
-            "#{aux.value}"
+            aux.value.to_s
             aux = aux.next
             if(aux == nil)
                 break
@@ -95,10 +95,18 @@ class Lista
             aux = @final
             #Esto puede hacerse con @final nada mas, pero ahora solo queremos mostrar
             while(aux != nil) do
-                puts "#{aux.value}"
+                "#{aux.value}"
                 aux = aux.prev
             end
         end
+    end
+    
+    def to_s()
+       aux = @inicio
+       while(aux != nil)
+        puts "#{aux.value}"
+        aux = aux.next
+       end
     end
     
     def each
