@@ -331,8 +331,8 @@ describe Lista do
             @articulo1 = Article.new("Articulo 1435N") do 
               nombre_autor :surname => "Vazquez",
                            :name => "Figueroa"
-              nombre_autor :surname => "Mujica",
-                           :name => "Pepe"
+              nombre_autor :surname => "Fons",
+                           :name => "Antonio"
               journal_ :name => "National Geography",
                        :volume => "20",
                        :issue => "3"
@@ -347,8 +347,8 @@ describe Lista do
         it "Se crea un objeto de tipo Article" do
             expect(@articulo1.is_a? Article).not_to be false
         end
-        it "El articulo tiene como autor a Figueroa Vazquez y Pepe Mujica" do
-           expect(@articulo1.author).to eq(["Vazquez Figueroa","Mujica Pepe"]) 
+        it "El articulo tiene como autor a Figueroa Vazquez y Antonio Fons" do
+           expect(@articulo1.author).to eq(["Vazquez Figueroa","Fons Antonio"]) 
         end
         
         it "El articulo debe tener un autor como minimo" do
