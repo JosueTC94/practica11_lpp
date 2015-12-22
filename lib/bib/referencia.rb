@@ -186,8 +186,17 @@ class Article
     resumen << " #{options[:resumen]}" if options[:resumen]
     abstract << resumen
   end
-  
-  
+
+  def to_s
+    output = identificador_articulo
+    output << "\n#{'=' * identificador_articulo.size}\n"
+    output << "Author: #{author.join(' & ')}\n"
+    output << "Journal: #{journal}\n"
+    output << "Title: #{title}\n"
+    output << "Date: #{date}\n"    
+    output << "Abstract: #{abstract}\n"
+    output
+  end  
 end
 
 def proc_from
