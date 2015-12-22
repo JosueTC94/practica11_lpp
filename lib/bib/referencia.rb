@@ -169,6 +169,25 @@ class Article
     journal << jour
   end
   
+  def title_(options = {})
+    titulo_articulo = ''
+    titulo_articulo << " #{options[:name]}" if options[:name]
+    title << titulo_articulo
+  end
+  
+  def date_(options = {})
+    fecha_publicacion = ''
+    fecha_publicacion << "#{options[:dia]}" if options[:dia] << "/#{options[:mes]}" if options[:mes] << "/#{options[:year]}" if options[:year]
+    date << fecha_publicacion
+  end
+  
+  def abstract_(options = {})
+    resumen = ''
+    resumen << " #{options[:resumen]}" if options[:resumen]
+    abstract << resumen
+  end
+  
+  
 end
 
 def proc_from
