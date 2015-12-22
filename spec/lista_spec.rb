@@ -347,5 +347,16 @@ describe Lista do
         it "Se crea un objeto de tipo Article" do
             expect(@articulo1.is_a? Article).not_to be false
         end
+        it "El articulo tiene como autor a Figueroa Vazquez y Pepe Mujica" do
+           expect(@articulo1.author).to eq(["Vazquez Figueroa","Mujica Pepe"]) 
+        end
+        
+        it "El articulo debe tener un autor como minimo" do
+            expect(@articulo1.author.count).to be >= 1
+        end
+        
+        it "El articulo no tiene mas de 3 autores" do
+            expect(@articulo1.author.count).not_to be > 3 
+        end
     end
 end
