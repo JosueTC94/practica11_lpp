@@ -162,6 +162,13 @@ class Article
     nombres_autores << "#{options[:surname]}" if options[:surname] << " #{options[:name]}" if options[:name]
     author << nombres_autores
   end
+  
+  def journal_(options = {})
+    jour = ''
+    jour << "#{options[:name]}" if options[:name] << " , volume #{options[:volume]}" if options[:volume] << ", issue #{options[:issue]}" if options[:issue]
+    journal << jour
+  end
+  
 end
 
 def proc_from
