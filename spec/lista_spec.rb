@@ -326,4 +326,22 @@ describe Lista do
             expect(@apa1.is_a? Apa).not_to be nil
         end
     end
+    describe "Practica 11 DSL" do
+        before :each do
+            @articulo1 = Article.new("Articulo 1435N") do 
+              nombre_autor :surname => "Vazquez",
+                           :name => "Figueroa"
+              nombre_autor :surname => "Mujica",
+                           :name => "Pepe"
+              journal_ :name => "National Geography",
+                       :volume => "20",
+                       :issue => "3"
+              title_  :name => "Vida imposible"
+              abstract_ :resumen => "Vida imposible en el fondo marino"
+              date_ :dia => "20",
+                   :mes => "Enero",
+                   :year => "2007"
+            end
+        end
+    end
 end
