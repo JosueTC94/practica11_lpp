@@ -407,5 +407,16 @@ describe Lista do
         it "El articulo tiene un fecha de publicacion asociada" do
            expect(@articulo1.date).not_to be nil 
         end
+        it "El articulo fue publicado en el año 2007" do
+            expect(@articulo1.date).to eq("20/Enero/2007") 
+        end
+
+        it "El articulo fue publicado en el mes de Enero" do
+            expect(@articulo1.date.split("/")[1]).to eq("Enero") 
+        end
+        
+        it "El articulo fue publicado antes del día 21" do
+            expect(@articulo1.date.split("/")[0]).to be < "21" 
+        end
     end
 end

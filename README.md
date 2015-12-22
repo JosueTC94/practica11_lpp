@@ -1,10 +1,10 @@
 #PRACTICA 11 LENGUAJES Y PARADIGMAS DE PROGRAMACIÓN
 
-##Titulo: Programación Orientada a Objetos. Módulos 
+##Titulo: Lenguajes de dominio específicos(DSL) 
 
 ##Autor: Josué Toledo Castro alu0100763492
 
-##Fecha: 27/11/15
+##Fecha: 22/12/15
 
 
 # Bib
