@@ -377,5 +377,15 @@ describe Lista do
         it "El volumen del articulo publicado por la revista National Geography es el 20" do
            expect(@articulo1.journal.split(",")[1].split(" ")[1]).to eq("20") 
         end
+        
+        it "El articulo tiene un titulo y un identificador diferentes" do
+            expect(@articulo1.identificador_articulo).not_to be nil
+            expect(@articulo1.title).not_to be nil
+            expect(@articulo1.identificador_articulo != @articulo1.title).to be true
+        end
+        
+        it "El articulo tiene el identificador 1435N" do
+            expect(@articulo1.identificador_articulo.split(" ")[1]).to eq("1435N") 
+        end
     end
 end
