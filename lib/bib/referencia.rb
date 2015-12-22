@@ -47,7 +47,7 @@ class Article
     resumen << " #{options[:resumen]}" if options[:resumen]
     abstract << resumen
   end
-
+ 
   def to_s
     output = identificador_articulo
     output << "\n#{'=' * identificador_articulo.size}\n"
