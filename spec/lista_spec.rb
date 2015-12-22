@@ -387,5 +387,17 @@ describe Lista do
         it "El articulo tiene el identificador 1435N" do
             expect(@articulo1.identificador_articulo.split(" ")[1]).to eq("1435N") 
         end
+        
+        it "El titulo del articulo no es Vida posible" do
+           expect(@articulo1.title).not_to eq("Vida posible") 
+        end
+        
+        it "El titulo del articulo tiene 2 palabras" do
+           expect(@articulo1.title.split(" ").count).to eq(2) 
+        end
+        
+        it "El titulo del articulo es Vida imposible" do
+           expect(@articulo1.title).to eq(" Vida imposible")
+        end 
     end
 end
