@@ -343,5 +343,9 @@ describe Lista do
                    :year => "2007"
             end
         end
+        
+        it "Se crea un objeto de tipo Article" do
+            expect(@articulo1.is_a? Article).not_to be false
+        end
     end
 end
