@@ -399,5 +399,13 @@ describe Lista do
         it "El titulo del articulo es Vida imposible" do
            expect(@articulo1.title).to eq(" Vida imposible")
         end 
+       
+        it "El articulo va sobre la vida marina" do
+            expect(@articulo1.abstract).to eq(" Vida imposible en el fondo marino")
+        end
+        
+        it "El articulo tiene un fecha de publicacion asociada" do
+           expect(@articulo1.date).not_to be nil 
+        end
     end
 end
