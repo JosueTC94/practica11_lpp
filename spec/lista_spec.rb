@@ -325,8 +325,5 @@ describe Lista do
         it "Se crea un objeto apa" do
             expect(@apa1.is_a? Apa).not_to be nil
         end
-        it "Se crea un objeto apa que contiene 3 libros" do
-            expect(@apa1.imprimir) == ("Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide. (the Facets Of Ruby)")
-        end
     end
 end

@@ -6,7 +6,6 @@
 
 ##Fecha: 27/11/15
 
-[![Coverage Status](https://coveralls.io/repos/JosueTC94/LPP_prct10/badge.svg?branch=master&service=github)](https://coveralls.io/github/JosueTC94/LPP_prct10?branch=master)
 
 # Bib
 

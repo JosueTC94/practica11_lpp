@@ -1,14 +1,13 @@
 
 class Apa
-  require "../bib/nodo"
-  require "../bib/lista"
+   require "../bib/nodo"
+   require "../bib/lista"
   
-  attr_reader :lista1,:autor_imprimir
+  attr_reader :lista1
   
  
   def initialize()
       @lista1 = Lista.new()
-      @lista2 = Lista.new()
   end  
 
   def to_s
@@ -53,7 +52,7 @@ def mostrar_titulo(string)
 end
 
 def sangria(string)
-    puts "   " << string
+    puts "\t" << string
 end
 
 class Referencia
@@ -175,18 +174,15 @@ times5 = gen_times(5)
 # puts ar.size
 
 libro1 = Libro.new(["Dave Thomas"], "programming ruby 1.9 & 2.0: the pragmatic programmers guide. (the facets of ruby)", "Pragmatic Bookshelf", "", 4, "(July 7, 2015)", ["ISBN-13: 968-1937785499", "ISBN-10: 1937785491"])
-# libro2 = Libro.new(["Aav Thomas"], "Programm Ruby 1.9 & 2.0: The Pragmatic Programmers Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 5, "(July 7, 2017)", ["ISBN-13: 978-1937785499", "ISBN-10: 1937785491"])
-# libro3 = Libro.new(["Thomas", "Hunt", "Fowler"], "Programming Ruby 1.9 & 2.0: The Pragmatic Programmers Guide. (The Facets of Ruby)", "Pragmatic Bookshelf", "", 3, "(July 7, 2013)", ["ISBN-13: 968-1937785499", "ISBN-10: 1937785491"])
+libro2 = Libro.new(["Dave Thomas","Jose Fons"], "programming ruby 1.9 & 2.0: the pragmatic programmers guide. (the facets of ruby)", "Pragmatic Bookshelf", "", 4, "(July 7, 2015)", ["ISBN-13: 968-1937785499", "ISBN-10: 1937785491"])
 
 nodo1 = Node.new(libro1)
-# #nodo2 = Node.new(libro2)
-# # nodo3 = Node.new(libro3)
+nodo2 = Node.new(libro2)
 
 apa1 = Apa.new()
 apa1.lista1.insertar_nodo(nodo1)
-# #apa1.lista1.insertar_nodo(nodo2)
-# #apa1.lista1.insertar_nodo(nodo3)
+apa1.lista1.insertar_nodo(nodo2)
 
 apa1.to_s
-# puts "\n"
+
 
