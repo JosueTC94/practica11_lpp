@@ -369,5 +369,13 @@ describe Lista do
         it "El articulo tiene un journal que especifica revista, volumen e issue" do
             expect(@articulo1.journal).to eq("National Geography , volume 20, issue 3")
         end
+        
+        it "El articulo fue publicado por la revista National Geography" do
+            expect(@articulo1.journal.split(",")[0]).to eq("National Geography ") 
+        end
+        
+        it "El volumen del articulo publicado por la revista National Geography es el 20" do
+           expect(@articulo1.journal.split(",")[1].split(" ")[1]).to eq("20") 
+        end
     end
 end
