@@ -1,0 +1,16 @@
+Tue, 22 Dec 2015 20:57:06 +0000
+./bib.gemspec	Fri, 11 Dec 2015 12:48:48 +0000
+./Rakefile	Tue, 22 Dec 2015 20:46:49 +0000
+./README.md	Tue, 22 Dec 2015 20:47:45 +0000
+./Guardfile	Fri, 27 Nov 2015 10:01:14 +0000
+./spec/lista_spec.rb	Tue, 22 Dec 2015 20:42:48 +0000
+./spec/spec_helper.rb	Fri, 11 Dec 2015 12:49:10 +0000
+./Gemfile	Fri, 11 Dec 2015 12:49:02 +0000
+./bin/setup	Fri, 27 Nov 2015 09:39:45 +0000
+./bin/console	Fri, 27 Nov 2015 09:39:45 +0000
+./lib/bib.rb	Fri, 11 Dec 2015 09:16:13 +0000
+./lib/bib/referencia.rb	Tue, 22 Dec 2015 20:53:41 +0000
+./lib/bib/lista.rb	Fri, 11 Dec 2015 09:47:01 +0000
+./lib/bib/nodo.rb	Fri, 27 Nov 2015 09:49:23 +0000
+./lib/bib/version.rb	Fri, 27 Nov 2015 09:39:45 +0000
+./Gemfile.lock	Fri, 27 Nov 2015 10:00:51 +0000
