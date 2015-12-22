@@ -358,5 +358,16 @@ describe Lista do
         it "El articulo no tiene mas de 3 autores" do
             expect(@articulo1.author.count).not_to be > 3 
         end
+        it "El articulo no tiene ningun metodo para devolver el numero isbn puesto que no es un libro" do
+            expect(@articulo1.respond_to?('numero_ISBN')).to be false
+        end
+        
+        it "El articulo tiene un atributo journal, que especifica la revista dónde se ha publicado" do
+            expect(@articulo1.respond_to?('journal')).to be true
+        end
+        
+        it "El articulo tiene un journal que especifica revista, volumen e issue" do
+            expect(@articulo1.journal).to eq("National Geography , volume 20, issue 3")
+        end
     end
 end
