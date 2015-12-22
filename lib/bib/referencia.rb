@@ -156,6 +156,12 @@ class Article
       end
     end    
   end
+  
+  def nombre_autor(options = {})
+    nombres_autores = ''
+    nombres_autores << "#{options[:surname]}" if options[:surname] << " #{options[:name]}" if options[:name]
+    author << nombres_autores
+  end
 end
 
 def proc_from
